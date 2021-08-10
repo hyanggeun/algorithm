@@ -27,10 +27,10 @@ func lowerBound(arr []int, x int) int {
 	end := len(arr)
 	for start < end {
 		mid := (start + end) >> 1
-		if x <= arr[mid] {
-			end = mid
-		} else {
+		if x > arr[mid] {
 			start = mid + 1
+		} else {
+			end = mid
 		}
 	}
 	return start
